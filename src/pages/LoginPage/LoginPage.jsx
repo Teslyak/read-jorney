@@ -1,3 +1,5 @@
+import { WrapLoginPage } from './LoginPage.styled';
+
 export const LoginPage = () => {
-  return <div>LoginPage</div>;
+  return <WrapLoginPage>LoginPage</WrapLoginPage>;
 };

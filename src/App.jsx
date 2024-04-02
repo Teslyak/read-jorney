@@ -9,7 +9,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <Route path="/register" element={<RegisterPage />} />
+          <Route index element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
         </Route>
       </Routes>
