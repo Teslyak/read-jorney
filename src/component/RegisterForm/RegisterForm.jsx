@@ -1,8 +1,24 @@
-import { Field, Form, Formik } from 'formik';
+import { Formik } from 'formik';
 import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
 import * as yup from 'yup';
-import { TitleRegisterForm, WrapRegisterForm } from './RegisterForm.styled';
+import {
+  EyeBtn,
+  EyeIcon,
+  EyeOffIcon,
+  FormRegister,
+  Input,
+  Label,
+  LoginLink,
+  LogoSvg,
+  SectionHero,
+  SubmitBtn,
+  TitleRegisterForm,
+  WrapInput,
+  WrapLabel,
+  WrapRegisterForm,
+} from './RegisterForm.styled';
+import SpriteIcons from '../../assets/icons/sprite.svg';
+import iPhoneBlack from '../../assets/icons/iPhoneBlack_1.png';
 const initialValues = {
   name: '',
   email: '',
@@ -31,31 +47,57 @@ export const RegisterForm = () => {
         validationSchema={userSchema}
         onSubmit={handleSubmit}
       >
-        <Form>
+        <FormRegister>
+          <LogoSvg width={42} height={17}>
+            <use xlinkHref={`${SpriteIcons}#logo`} />
+          </LogoSvg>
           <TitleRegisterForm>
             Expand your mind, reading
-            <span>a book</span>
+            <span> a book</span>
           </TitleRegisterForm>
-          <Field type="text" name="name" placeholder="Name" />
-          <Field type="text" name="email" placeholder="Email" />
-          <Field
-            type={isPasswordVisible ? 'text' : 'password'}
-            name="password"
-            placeholder="Password"
-          />
-          <button
-            type="button"
-            onClick={() => {
-              setIsPasswordVisible(!isPasswordVisible);
-            }}
-          >
-            {/* {isPasswordVisible ? <EyeOn /> : <EyeOff />} */}
-          </button>
+          <WrapInput>
+            <WrapLabel>
+              <Label htmlFor="name">Name:</Label>
+              <Input type="text" name="name" />
+            </WrapLabel>
+            <WrapLabel>
+              <Label htmlFor="email">Mail:</Label>
+              <Input type="text" name="email" />
+            </WrapLabel>
+            <WrapLabel>
+              {' '}
+              <Label htmlFor="password">Password:</Label>
+              <Input
+                type={isPasswordVisible ? 'text' : 'password'}
+                name="password"
+              />
+              <EyeBtn
+                type="button"
+                onClick={() => {
+                  setIsPasswordVisible(!isPasswordVisible);
+                }}
+              >
+                {isPasswordVisible ? (
+                  <EyeIcon width={18} height={18}>
+                    <use xlinkHref={`${SpriteIcons}#eye`} />
+                  </EyeIcon>
+                ) : (
+                  <EyeOffIcon width={18} height={18}>
+                    <use xlinkHref={`${SpriteIcons}#eyeOff`} />
+                  </EyeOffIcon>
+                )}
+              </EyeBtn>
+              ;
+            </WrapLabel>
+          </WrapInput>
 
-          <button type="submit">Registration</button>
-          <Link to="/login">Already have an account?</Link>
-        </Form>
+          <SubmitBtn type="submit">Registration</SubmitBtn>
+          <LoginLink to="/login">Already have an account?</LoginLink>
+        </FormRegister>
       </Formik>
+      <SectionHero>
+        <img src={iPhoneBlack} alt="phone" />
+      </SectionHero>
     </WrapRegisterForm>
   );
 };

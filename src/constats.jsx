@@ -4,4 +4,5 @@ export const colors = {
   bgc_third: '#262626',
   color_text_first: '#F9F9F9',
   color_text_second: '#E3E3E380',
+  color_text_label: '#686868',
 };

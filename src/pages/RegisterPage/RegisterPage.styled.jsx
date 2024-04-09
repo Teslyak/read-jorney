@@ -2,7 +2,7 @@ import { colors } from '../../constats';
 import styled from 'styled-components';
 
 export const WrapRegisterPage = styled.div`
-  max-width: 374px;
+  max-width: 375px;
   background-color: ${colors.bgc_first};
   @media only screen and (min-width: 375px) {
     width: 100%;
