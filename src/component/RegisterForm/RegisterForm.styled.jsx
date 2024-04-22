@@ -3,10 +3,7 @@ import { colors } from '../../constats';
 import { Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
 
-export const WrapRegisterForm = styled.div`
-  border-radius: 30px;
-  background-color: ${colors.bgc_second};
-`;
+export const WrapRegisterForm = styled.div``;
 
 export const TitleRegisterForm = styled.h1`
   font-size: 32px;
@@ -26,6 +23,9 @@ export const LogoSvg = styled.svg`
 
 export const FormRegister = styled(Form)`
   padding: 20px 20px;
+  background-color: ${colors.bgc_second};
+  border-radius: 30px;
+  margin-bottom: 10px;
 `;
 
 export const Input = styled(Field)`
@@ -96,9 +96,10 @@ export const SubmitBtn = styled.button`
   font-size: 14px;
   font-weight: 700;
   line-height: 18px;
-  letter-spacing: 0.28px;
+  letter-spacing: 0.22px;
   padding: 12px 29px 12px 29px;
   border: none;
+  margin-right: 14px;
 
   &:hover {
     border: 1px solid rgba(249, 249, 249, 0.2);
@@ -111,7 +112,6 @@ export const SubmitBtn = styled.button`
     background: transparent;
     color: ${colors.color_text_first};
   }
-  margin-right: 14px;
 `;
 
 export const LoginLink = styled(Link)`
@@ -127,6 +127,7 @@ export const LoginLink = styled(Link)`
 
 export const SectionHero = styled.section`
   width: 100%;
+
   border-radius: 30px;
   background: ${colors.bgc_second};
   padding: 20px 40px 0 40px;

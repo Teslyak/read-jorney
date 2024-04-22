@@ -18,7 +18,7 @@ import {
   WrapRegisterForm,
 } from './RegisterForm.styled';
 import SpriteIcons from '../../assets/icons/sprite.svg';
-import iPhoneBlack from '../../assets/icons/iPhoneBlack_1.png';
+import iPhoneBlack from '../../assets/img/iphone.png';
 const initialValues = {
   name: '',
   email: '',
