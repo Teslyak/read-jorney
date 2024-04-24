@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { colors } from '../../constats';
-import { Field, Form } from 'formik';
+import { ErrorMessage, Field, Form } from 'formik';
 import { Link } from 'react-router-dom';
 
 export const WrapRegisterForm = styled.div``;
@@ -34,7 +34,6 @@ export const Input = styled(Field)`
   padding: 14px 14px 14px 0;
   border-radius: 12px;
   background-color: ${colors.bgc_third};
-
   color: ${colors.color_text_first};
   border: none;
   font-size: 12px;
@@ -50,6 +49,12 @@ export const Input = styled(Field)`
   }
   &[name='password'] {
     padding-left: 78px;
+  }
+  &.error {
+    border: 1px solid rgb(233, 5, 22);
+  }
+  &.success {
+    border: 1px solid rgb(48, 185, 77);
   }
 `;
 
@@ -100,6 +105,7 @@ export const SubmitBtn = styled.button`
   padding: 12px 29px 12px 29px;
   border: none;
   margin-right: 14px;
+  border: 1px solid transparent;
 
   &:hover {
     border: 1px solid rgba(249, 249, 249, 0.2);
@@ -127,8 +133,19 @@ export const LoginLink = styled(Link)`
 
 export const SectionHero = styled.section`
   width: 100%;
-
+  height: 351px;
+  overflow: hidden;
   border-radius: 30px;
   background: ${colors.bgc_second};
   padding: 20px 40px 0 40px;
+`;
+export const ImgHero = styled.img``;
+
+export const ErrorMsg = styled.div`
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  letter-spacing: -0.24px;
+  color: rgb(233, 5, 22);
+  margin-top: 8px;
 `;
